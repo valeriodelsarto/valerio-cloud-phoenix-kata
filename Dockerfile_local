@@ -1,0 +1,14 @@
+FROM node:8.11.1-alpine
+
+ENV PORT=80
+ENV DB_CONNECTION_STRING=mongodb://admin_valerio:password_valerio@valerio-cloud-phoenix-kata.valeriodelsarto.it/valerio-cloud-phoenix-kata
+
+COPY . /app
+
+WORKDIR /app
+
+RUN npm install
+
+EXPOSE 80
+
+CMD [ "npm", "start" ]
